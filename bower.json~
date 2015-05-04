@@ -7,7 +7,6 @@
   ],
   "description": "A simple timeclock",
   "main": "public/scripts/app.js",
-  "directory": "public/bower_components",
   "license": "MIT",
   "ignore": [
     "**/.*",
