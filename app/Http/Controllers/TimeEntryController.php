@@ -82,7 +82,8 @@ class TimeEntryController
      */
     public function update($id)
     {
-        //
+        TimeEntry::find($id)->update(Request::all());
+
     }
 
     /**

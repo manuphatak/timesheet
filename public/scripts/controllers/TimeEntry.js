@@ -63,17 +63,7 @@
         vm.clockIn = moment();
         vm.clockOut = moment();
 
-        //vm.timeentries.push({
-        //                      "user_id":        2,
-        //                      "user_firstname": "Manu",
-        //                      "user_lastname":  "Phatak",
-        //                      "start_time":     vm.clockIn,
-        //                      "end_time":       vm.clockOut,
-        //                      "loggedTime":     time.getTimeDiff(vm.clockIn,
-        //                                                         vm.clockOut),
-        //                      "comment":        vm.comment
-        //                    });
-        //updateTotalTime(vm.timeentries);
+
         vm.comment = "";
         vm.timeEntryUser = "";
       }
