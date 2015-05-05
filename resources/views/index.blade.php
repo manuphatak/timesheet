@@ -105,14 +105,14 @@
                     <select name="user"
                             class="form-control"
                             ng-model="time.user"
-                            ng-options="user.first_name + ' ' user.last_name for user in vm.users track by user.id">
+                            ng-options="user.first_name + ' ' + user.last_name for user in vm.users track by user.id">
                         <option value="user.id"></option>
                     </select>
                 </div>
                 <div class="col-sm-6">
                     <h5>Comment</h5>
                     <textarea class="form-control"
-                              ng-model="time-comment">@{{time.comment}}</textarea>
+                              ng-model="time.comment">@{{time.comment}}</textarea>
                 </div>
                 <div class="edit-controls">
                     <button class="btn btn-primary btn-sm"
