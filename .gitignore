@@ -1,6 +1,8 @@
-/bootstrap/compiled.php
-.env.*.php
-.env.php
+/lumen.log
+/vendor
 .env
+/bootstrap/compiled.php
 .idea/
 bower_components/
+storage/
+*~
