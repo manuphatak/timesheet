@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTimeEntriesTable extends Migration
+class CreateTimeEntryTable extends Migration
 {
 
     /**
@@ -13,7 +13,7 @@ class CreateTimeEntriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('time_entries',
+        Schema::create('time_entry',
             function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('user_id')->unsigned();
@@ -38,7 +38,7 @@ class CreateTimeEntriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('time_entries');
+        Schema::drop('time_entry');
     }
 
 }

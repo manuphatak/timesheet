@@ -16,7 +16,8 @@
     "phpunit/phpunit":             "~4.0",
     "barryvdh/laravel-ide-helper": "^2.0",
     "doctrine/dbal":               "^2.5",
-    "filp/whoops":                 "^1.1"
+    "filp/whoops":                 "^1.1",
+    "laracasts/testdummy":         "^2.3"
   },
   "autoload":     {
     "psr-4":    {
@@ -36,8 +37,7 @@
   },
   "scripts":      {
     "post-update-cmd": [
-      "php artisan ide-helper:meta",
-      "php artisan optimize"
+      "php artisan ide-helper:meta"
     ]
   }
 }
