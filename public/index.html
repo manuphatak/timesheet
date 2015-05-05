@@ -44,6 +44,7 @@
             <span class="glyphicon glyphicon-user"></span>
             {{time.user_firstname}} {{time.user_lastname}}
           </h4>
+
           <p>
             <span class="glyphicon glyphicon-pencil"></span>
             {{time.comment}}
@@ -51,9 +52,35 @@
         </div>
         <div class="col-sm-4 time-numbers">
           <h4><span class="glyphicon glyphicon-calendar"></span>
-            {{time.end_time | date: 'mediumDate'}} </h4>
+            {{time.end_time | date: 'mediumDate'}}
+          </h4>
+
+          <h2>
+            <span class="label label-primary"
+                  ng-show="time.loggedTime.duration._data.hours > 0">
+              {{time.loggedTime.duration._data.hours}} hour<span ng-show="time.loggedTime.duration._data.hours > 1">s</span>
+            </span>
+          </h2>
+          <h4><span class="label label-default">
+            {{time.loggedTime.duration._data.minutes}} minutes
+          </span>
+
+          </h4>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="well time-numbers">
+      <h1><span class="glyphicon glyphicon-time"></span> Total Time</h1>
+
+      <h1>
+        <span class="label label-primary">{{vm.totalTime.hours}} hours</span>
+      </h1>
+      <h3>
+        <span class="label label-default">{{vm.totalTime.minutes}} minutes</span>
+      </h3>
+
     </div>
   </div>
 </div>
