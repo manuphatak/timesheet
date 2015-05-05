@@ -1,7 +1,4 @@
-<?php
-
-
-namespace app;
+<?php namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
@@ -17,7 +14,7 @@ class TimeEntry extends Model
 
     protected $fillable = ['user_id', 'start_time', 'end_time', 'comment'];
 
-    protected $hidden = ['user_id'];
+    protected $visible = ['id', 'start_time', 'end_time', 'comment', 'user'];
 
     public function user()
     {

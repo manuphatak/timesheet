@@ -1,7 +1,4 @@
-<?php
-
-
-namespace app;
+<?php namespace App;
 
 
 use Illuminate\Auth\Authenticatable;
@@ -23,8 +20,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'id',
         'first_name',
         'last_name',
-        'email',
-        'remember_token'
+        'email'
     ];
 
     protected $fillable = [

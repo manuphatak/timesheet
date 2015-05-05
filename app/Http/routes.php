@@ -1,5 +1,7 @@
 <?php
 
+use Laravel\Lumen\Application;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +13,7 @@
 |
 */
 
+
 $app->get('/',
           [
               'as' => 'home',
@@ -18,3 +21,18 @@ $app->get('/',
                   return view('index');
               }
           ]);
+
+$app->group(['prefix' => 'api'],
+    function (Application $app) {
+        $app->get('users',
+                  [
+                      'uses' => 'App\Http\Controllers\UserController@index',
+                      'as'   => 'user.index'
+                  ]);
+        $app->get('time',
+                  [
+                      'uses' => 'App\Http\Controllers\TimeEntryController@index',
+                      'as'   => 'time.index'
+                  ]);
+
+    });

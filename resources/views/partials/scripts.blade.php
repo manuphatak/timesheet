@@ -8,4 +8,5 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/TimeEntry.js"></script>
 <script src="scripts/services/time.js"></script>
+<script src="scripts/services/user.js"></script>
 @yield('append.scripts')
