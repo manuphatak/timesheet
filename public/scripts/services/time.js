@@ -3,7 +3,7 @@
   angular.module('timeTracker').factory('time', time);
 
   function time($resource) {
-    var Time = $resource('api/time/:id', {},{
+    var Time = $resource('api/time/:id', {}, {
       update: {
         method: 'PUT'
       }
@@ -39,10 +39,19 @@
       }
     }
 
+    function saveTime(data) {
+      return Time.save(data).$promise.then(function (success) {
+        console.log(success);
+      }, function (error) {
+        console.log(error);
+      });
+    }
+
     return {
       getTime:      getTime,
       getTimeDiff:  getTimeDiff,
-      getTotalTime: getTotalTime
+      getTotalTime: getTotalTime,
+      saveTime:     saveTime
     }
   }
 })();

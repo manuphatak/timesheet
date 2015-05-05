@@ -34,5 +34,10 @@ $app->group(['prefix' => 'api'],
                       'uses' => 'App\Http\Controllers\TimeEntryController@index',
                       'as'   => 'time.index'
                   ]);
+        $app->post('time',
+                  [
+                      'uses' => 'App\Http\Controllers\TimeEntryController@store',
+                      'as'   => 'time.store'
+                  ]);
 
     });

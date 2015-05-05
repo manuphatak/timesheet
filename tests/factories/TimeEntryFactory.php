@@ -8,5 +8,5 @@ $factory('App\TimeEntry',
                                                      $endDate = 'now'),
              'end_time' => $faker->dateTimeBetween($startDate = 'now',
                                                    $endDate = '5 hours'),
-             'comment' => $faker->sentence()
+             'comment' => $faker->optional()->sentence()
          ]);

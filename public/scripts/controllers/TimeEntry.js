@@ -47,19 +47,35 @@
           alert("Your time entry has to be greater than zero!");
           return;
         }
+        time.saveTime({
+                        "user_id":    vm.timeEntryUser.id,
+                        "start_time": vm.clockIn,
+                        "end_time":   vm.clockOut,
+                        "comment":    vm.comment
+                      }).then(function (success) {
+          getTimeEntries();
+          console.log(success);
+        }, function (error) {
+          console.log(error);
+        });
+        getTimeEntries();
 
-        vm.timeentries.push({
-                              "user_id":        2,
-                              "user_firstname": "Manu",
-                              "user_lastname":  "Phatak",
-                              "start_time":     vm.clockIn,
-                              "end_time":       vm.clockOut,
-                              "loggedTime":     time.getTimeDiff(vm.clockIn,
-                                                                 vm.clockOut),
-                              "comment":        vm.comment
-                            });
-        updateTotalTime(vm.timeentries);
+        vm.clockIn = moment();
+        vm.clockOut = moment();
+
+        //vm.timeentries.push({
+        //                      "user_id":        2,
+        //                      "user_firstname": "Manu",
+        //                      "user_lastname":  "Phatak",
+        //                      "start_time":     vm.clockIn,
+        //                      "end_time":       vm.clockOut,
+        //                      "loggedTime":     time.getTimeDiff(vm.clockIn,
+        //                                                         vm.clockOut),
+        //                      "comment":        vm.comment
+        //                    });
+        //updateTotalTime(vm.timeentries);
         vm.comment = "";
+        vm.timeEntryUser = "";
       }
     }
 

@@ -12,6 +12,6 @@ class TimeEntryTableSeeder extends Seeder
     {
         DB::table('time_entry')->delete();
 
-        TestDummy::times(50)->create('App\TimeEntry');
+        TestDummy::times(7)->create('App\TimeEntry');
     }
 }

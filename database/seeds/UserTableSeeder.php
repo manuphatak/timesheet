@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->delete();
 
-        TestDummy::times(10)->create('App\User');
+        TestDummy::times(2)->create('App\User');
 
         TestDummy::create('App\User', ['email' => 'user@fake.com']);
         TestDummy::create('App\User', ['email' => 'admin@fake.com']);

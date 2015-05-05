@@ -2,6 +2,7 @@
 
 
 use App\TimeEntry;
+use Request;
 
 class TimeEntryController
 {
@@ -28,11 +29,24 @@ class TimeEntryController
     /**
      * Store a newly created resource in storage.
      *
+     * @param Request $request
+     *
      * @return Response
      */
     public function store()
     {
+        //        $timeEntry = TimeEntry::create($request->all());
         //
+        //
+        //        return $timeEntry;
+        $data = Request::all();
+
+        $timeentry = new TimeEntry();
+
+        $timeentry->fill($data);
+
+        $timeentry->save();
+
     }
 
     /**
