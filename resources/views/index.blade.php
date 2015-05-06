@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('append.nav')
-    <div class="container-fluid time-entry">
+    <div class="container time-entry">
         <div class="timepicker">
             <span class="timepicker-title label label-primary">Clock In</span>
             <timepicker ng-model="vm.clockIn"
