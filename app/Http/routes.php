@@ -35,9 +35,19 @@ $app->group(['prefix' => 'api'],
                       'as'   => 'time.index'
                   ]);
         $app->post('time',
+                   [
+                       'uses' => 'App\Http\Controllers\TimeEntryController@store',
+                       'as'   => 'time.store'
+                   ]);
+        $app->put('time/{id}',
                   [
-                      'uses' => 'App\Http\Controllers\TimeEntryController@store',
-                      'as'   => 'time.store'
+                      'uses' => 'App\Http\Controllers\TimeEntryController@update',
+                      'as'   => 'time.update'
+                  ]);
+        $app->delete('time/{id}',
+                  [
+                      'uses' => 'App\Http\Controllers\TimeEntryController@destroy',
+                      'as'   => 'time.destroy'
                   ]);
 
     });

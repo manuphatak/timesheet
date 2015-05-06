@@ -98,6 +98,7 @@
                                     hour-step="1"
                                     minute-step="1"
                                     show-meridian="true"></timepicker>
+                        <input ng-model="time.end_time" type="text">
                     </div>
                 </div>
                 <div class="col-sm-6">

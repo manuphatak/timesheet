@@ -27,10 +27,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'first_name',
         'last_name',
         'email',
+        'password',
+        'timeEntries'
     ];
 
     public function timeEntries()
     {
-        $this->hasMany('App\TimeEntry');
+        return $this->hasMany('App\TimeEntry');
     }
+
 }

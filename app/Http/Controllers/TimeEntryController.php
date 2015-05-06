@@ -2,9 +2,11 @@
 
 
 use App\TimeEntry;
+use App\Http\Controllers\Controller;
+use App\User;
 use Request;
 
-class TimeEntryController
+class TimeEntryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,18 +37,7 @@ class TimeEntryController
      */
     public function store()
     {
-        //        $timeEntry = TimeEntry::create($request->all());
-        //
-        //
-        //        return $timeEntry;
-        $data = Request::all();
-
-        $timeentry = new TimeEntry();
-
-        $timeentry->fill($data);
-
-        $timeentry->save();
-
+        TimeEntry::create(Request::all());
     }
 
     /**
@@ -82,7 +73,7 @@ class TimeEntryController
      */
     public function update($id)
     {
-        TimeEntry::find($id)->update(Request::all());
+        TimeEntry::findOrFail($id)->fill(Request::all())->save();
 
     }
 
@@ -95,6 +86,6 @@ class TimeEntryController
      */
     public function destroy($id)
     {
-        //
+        TimeEntry::findOrFail($id)->delete();
     }
 }
