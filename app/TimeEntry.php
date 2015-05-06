@@ -10,7 +10,7 @@ class TimeEntry extends Model
 
     protected $table = 'time_entry';
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'start_time', 'end_time'];
 
     protected $fillable = ['user_id', 'start_time', 'end_time', 'comment'];
 
